@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class BangDieuKhienController extends Controller
 {
-       public function tongQuan()
+    public function tongQuan()
     {
         $cuahang = Auth::user()->nhacungcap;
 

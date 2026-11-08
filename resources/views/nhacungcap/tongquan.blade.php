@@ -9,7 +9,7 @@
     <div class="col-md-4 col-6">
         <div class="thethongke">
             <small>Sản phẩm đang bán</small>
-            <strong>—</strong>
+            <strong>{{ $thongke['dangban'] }}</strong>
         </div>
     </div>
     <div class="col-md-4 col-6">
