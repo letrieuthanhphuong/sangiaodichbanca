@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/giaodien.css') }}">
     <link rel="stylesheet" href="{{ asset('css/chung.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/khungkhachhang.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/khung.css') }}">
     <link rel="stylesheet" href="{{ asset('css/trangchu.css') }}">
     <link rel="stylesheet" href="{{ asset('css/theca.css') }}">
     <link rel="stylesheet" href="{{ asset('css/cuaso.css') }}">
@@ -53,6 +53,8 @@
             </div>
         </div>
     </div>
+
+    
 
     {{-- Đầu trang --}}
     <header class="dautrang">
