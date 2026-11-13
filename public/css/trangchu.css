@@ -1,0 +1,93 @@
+/*
+ * trangchu.css: Riêng trang chủ
+ * Gồm: banner, ô danh mục, khối cam kết, thẻ cửa hàng.
+ */
+
+/* ===== Banner trang chủ ===== */
+.bannertrangchu {
+    background: linear-gradient(135deg, #0f1f3d 0%, var(--maunen) 70%);
+    border: 1px solid var(--mauvien);
+    border-radius: 16px;
+    padding: 48px;
+    margin-top: 24px;
+}
+.bannertrangchu h1 { font-size: 40px; font-weight: 800; line-height: 1.2; }
+.bannertrangchu h1 em { color: var(--mauxanh); font-style: normal; }
+.bannertrangchu p { color: var(--mauchumo); margin: 16px 0 24px; }
+.bannertrangchu img { width: 100%; border-radius: 12px; }
+.nhan {
+    display: inline-block;
+    background: rgba(34, 211, 238, .12);
+    color: var(--mauxanh);
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+}
+
+/* ===== Ô danh mục ===== */
+.odanhmuc {
+    background: var(--mauthe);
+    border: 1px solid var(--mauvien);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: .2s;
+}
+.odanhmuc:hover { border-color: var(--mauxanh); transform: translateY(-3px); }
+.odanhmuc .anh {
+    height: 130px;
+    background: linear-gradient(135deg, #16294d, #0f1f3d);
+}
+.odanhmuc .chu { padding: 12px 14px; }
+.odanhmuc .chu small { color: var(--mauchumo); }
+
+/* ===== Khối cam kết ===== */
+.khoicamket {
+    background: var(--mauthe);
+    border: 1px solid var(--mauvien);
+    border-radius: 12px;
+    padding: 20px;
+    height: 100%;
+}
+.khoicamket .bieutuong {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(34, 211, 238, .12);
+    color: var(--mauxanh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+.khoicamket p { color: var(--mauchumo); font-size: 14px; margin: 6px 0 0; }
+
+/* ===== Thẻ cửa hàng ở trang chủ ===== */
+.thecuahang {
+    background: var(--mauthe);
+    border: 1px solid var(--mauvien);
+    border-radius: 12px;
+    padding: 18px;
+    height: 100%;
+    text-align: center;
+    transition: .2s;
+}
+.thecuahang:hover { border-color: var(--mauxanh); transform: translateY(-3px); }
+.chucaidau {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(34, 211, 238, .14);
+    color: var(--mauxanh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 auto 12px;
+}
+.tencuahangthe { font-weight: 700; margin-bottom: 6px; }
+.diachicuahang { color: var(--mauchumo); font-size: 13px; margin-bottom: 8px; }
+.motacuahang { color: var(--mauchumo); font-size: 13px; margin: 0 0 10px; }
+.soluongcuahang { color: var(--maucam); font-size: 13px; font-weight: 600; }

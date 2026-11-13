@@ -9,6 +9,7 @@ use App\Http\Controllers\nhacungcap\BangDieuKhienController;
 use App\Http\Controllers\NhaCungCap\SanPhamController;
 use App\Http\Controllers\QuanTri\DuyetSanPhamController;
 use App\Http\Controllers\TrangChuController;
+use App\Http\Controllers\TimKiemController;
 
 Route::get('/', function () {
     return view('trangchu');
@@ -31,6 +32,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/dangkynguoiban', [DangKyNhaCungCapController::class, 'mo'])->name('nhacungcap.mo');
     Route::post('/dangkynguoiban', [DangKyNhaCungCapController::class, 'guiDon'])->name('nhacungcap.guidon');
 });
+
+Route::get('/timkiem', [TimKiemController::class, 'hienKetQua'])->name('timkiem');
 
 // Khu vực quản trị viên
 Route::middleware(['auth', 'vaitro:quantri'])->prefix('quantri')->group(function () {

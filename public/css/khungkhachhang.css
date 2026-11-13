@@ -1,0 +1,41 @@
+/*
+ * khung.css: Khung trang dành cho khách
+ * Gồm: thanh trên cùng, đầu trang (kèm ô tìm kiếm) và chân trang.
+ */
+
+/* ===== Thanh trên cùng ===== */
+.thanhtren {
+    background: #070d1a;
+    font-size: 12px;
+    color: var(--mauchumo);
+    padding: 6px 0;
+}
+
+/* ===== Đầu trang ===== */
+.dautrang {
+    background: var(--mauthe);
+    border-bottom: 1px solid var(--mauvien);
+    padding: 14px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.otimkiem {
+    background: var(--maunen);
+    border: 1px solid var(--mauvien);
+    color: var(--mauchu);
+    border-radius: 8px;
+    padding: 10px 14px;
+    width: 100%;
+}
+.otimkiem:focus { outline: none; border-color: var(--mauxanh); }
+
+/* ===== Chân trang ===== */
+.chantrang {
+    background: #070d1a;
+    border-top: 1px solid var(--mauvien);
+    color: var(--mauchumo);
+    text-align: center;
+    padding: 24px 0;
+    font-size: 14px;
+}

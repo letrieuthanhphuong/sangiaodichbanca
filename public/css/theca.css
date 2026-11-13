@@ -1,0 +1,32 @@
+/*
+ * theca.css: Thẻ sản phẩm (cá)
+ * Dùng ở trang chủ và trang kết quả tìm kiếm.
+ */
+
+/* ===== Thẻ cá ===== */
+.theca {
+    background: var(--mauthe);
+    border: 1px solid var(--mauvien);
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+    transition: .2s;
+}
+.theca:hover { border-color: var(--mauxanh); transform: translateY(-3px); }
+.theca .anhca {
+    aspect-ratio: 4 / 3;
+    background: linear-gradient(135deg, #16294d, #0f1f3d);
+    overflow: hidden;
+}
+.theca .anhca img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+.theca .noidungthe { padding: 14px; }
+.theca .tenca { font-weight: 600; margin-bottom: 4px; }
+.theca .tencuahang { font-size: 13px; color: var(--mauchumo); margin-bottom: 10px; }
+.theca .giaca { color: var(--maucam); font-weight: 700; font-size: 18px; margin-bottom: 12px; }
+.theca .nutcam { width: 100%; text-align: center; padding: 8px; }

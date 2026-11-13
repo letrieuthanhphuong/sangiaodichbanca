@@ -7,6 +7,12 @@
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/giaodien.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/chung.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/khungkhachhang.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/trangchu.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/theca.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/cuaso.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/timkiem.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -52,7 +58,11 @@
     <header class="dautrang">
         <div class="container d-flex align-items-center gap-4">
             <a href="/" class="thuonghieu">Aqua<span>Market</span></a>
-            <input type="text" class="otimkiem" placeholder="Tìm cá Koi, Rồng, Betta...">
+            <form action="{{ route('timkiem') }}" method="GET" class="formtimkiem">
+                <input type="text" name="tukhoa" class="otimkiem" value="{{ request('tukhoa') }}"
+                    placeholder="Tìm cá Koi, Rồng, Betta..." autocomplete="off">
+                <button type="submit" class="nutcam">Tìm</button>
+            </form>
             <a href="#" class="nutcam text-nowrap">Giỏ hàng (0)</a>
         </div>
     </header>

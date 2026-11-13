@@ -1,0 +1,91 @@
+/*
+ * cuaso.css: Cửa sổ nổi
+ * Gồm: đăng nhập, đăng ký, đăng ký nhà cung cấp.
+ */
+
+/* ===== Cửa sổ đăng nhập, đăng ký ===== */
+.nencuaso {
+    position: fixed;
+    inset: 0;
+    background: rgba(3, 8, 18, .75);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 16px;
+}
+.nencuaso.mo { display: flex; }
+.hopxacthuc {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    max-height: 92vh;
+    overflow-y: auto;
+    background: var(--mauthe);
+    border: 1px solid var(--mauvien);
+    border-radius: 16px;
+    padding: 32px 28px 24px;
+    text-align: center;
+}
+.hopxacthuc h2 { font-size: 22px; font-weight: 700; margin-bottom: 20px; }
+.bieutuongxacthuc { font-size: 56px; color: var(--mauxanh); margin-bottom: 8px; }
+.nutdong {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    background: none;
+    border: none;
+    color: var(--mauchumo);
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+}
+.nutdong:hover { color: var(--mauchu); }
+.onhap { position: relative; margin-bottom: 14px; }
+.onhap input {
+    width: 100%;
+    background: var(--maunen);
+    border: 1px solid var(--mauvien);
+    color: var(--mauchu);
+    border-radius: 8px;
+    padding: 11px 14px;
+}
+.onhap input:focus { outline: none; border-color: var(--mauxanh); }
+.matkhauhop input { padding-right: 42px; }
+.matkhauhop i {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--mauchumo);
+    cursor: pointer;
+}
+.nutchinh {
+    width: 100%;
+    background: var(--maucam);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 11px;
+    font-weight: 600;
+}
+.nutchinh:hover { background: #ff8f3d; }
+.ghichuxacthuc { color: var(--mauchumo); font-size: 12px; text-align: left; margin: -4px 0 14px; }
+.chuyenhuong { color: var(--mauchumo); font-size: 14px; margin-top: 16px; }
+.chuyenhuong a { color: var(--mauxanh); }
+
+/* ===== Cửa sổ đăng ký bán hàng ===== */
+.hopxacthucrong { max-width: 520px; }
+.onhap textarea {
+    width: 100%;
+    background: var(--maunen);
+    border: 1px solid var(--mauvien);
+    color: var(--mauchu);
+    border-radius: 8px;
+    padding: 11px 14px;
+    resize: vertical;
+}
+.onhap textarea:focus { outline: none; border-color: var(--mauxanh); }
+.bangthongtin { width: 100%; border-collapse: collapse; text-align: left; font-size: 14px; }
+.bangthongtin th, .bangthongtin td { padding: 10px 8px; border-bottom: 1px solid var(--mauvien); }
+.bangthongtin th { color: var(--mauchumo); font-weight: 600; width: 38%; }

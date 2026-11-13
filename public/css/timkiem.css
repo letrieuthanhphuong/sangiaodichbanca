@@ -1,0 +1,39 @@
+/*
+ * timkiem.css: Tìm kiếm sản phẩm
+ * Gồm: ô tìm kiếm ở đầu trang và trang kết quả.
+ * Nạp ở mọi trang của khách, vì ô tìm kiếm nằm trên đầu trang.
+ */
+
+/* ===== Ô tìm kiếm ở đầu trang ===== */
+.formtimkiem {
+    display: flex;
+    flex: 1;
+    gap: 8px;
+    margin: 0;
+}
+.formtimkiem .otimkiem { flex: 1; min-width: 0; }
+.formtimkiem .nutcam { padding: 10px 18px; white-space: nowrap; }
+.formtimkiem .nutcam:focus-visible { outline: 2px solid var(--mauxanh); outline-offset: 2px; }
+
+/* ===== Trang kết quả ===== */
+.ghichutimkiem { color: var(--mauchumo); margin: 0 0 20px; }
+.ghichutimkiem strong { color: var(--maucam); }
+
+/* Khung báo "chưa nhập từ khóa" và "không tìm thấy" */
+.khongketqua {
+    text-align: center;
+    padding: 48px 16px;
+    background: var(--mauthe);
+    border: 1px solid var(--mauvien);
+    border-radius: 12px;
+    color: var(--mauchumo);
+}
+.khongketqua i { display: block; font-size: 40px; color: var(--mauxanh); margin-bottom: 12px; }
+.khongketqua p { color: var(--mauchu); font-size: 18px; margin: 0 0 4px; }
+.khongketqua small { display: block; margin-bottom: 16px; }
+
+/* ===== Màn hình nhỏ: ô tìm kiếm xuống hàng riêng, chiếm hết chiều ngang ===== */
+@media (max-width: 768px) {
+    .dautrang .container { flex-wrap: wrap; }
+    .formtimkiem { order: 3; flex-basis: 100%; }
+}
