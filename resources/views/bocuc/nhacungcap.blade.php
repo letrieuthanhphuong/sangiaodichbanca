@@ -6,7 +6,7 @@
     <title>@yield('tieude', 'Kênh người bán - AquaMarket')</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/giaodien.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/chung.css') }}">
     <link rel="stylesheet" href="{{ asset('css/bangdieukhien.css') }}">
 </head>
 <body>
