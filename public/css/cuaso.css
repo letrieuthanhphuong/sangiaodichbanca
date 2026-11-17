@@ -3,7 +3,7 @@
  * Gồm: đăng nhập, đăng ký, đăng ký nhà cung cấp.
  */
 
-/* ===== Cửa sổ đăng nhập, đăng ký ===== */
+/* Cửa sổ đăng nhập, đăng ký */
 .nencuaso {
     position: fixed;
     inset: 0;
@@ -74,7 +74,7 @@
 .chuyenhuong { color: var(--mauchumo); font-size: 14px; margin-top: 16px; }
 .chuyenhuong a { color: var(--mauxanh); }
 
-/* ===== Cửa sổ đăng ký bán hàng ===== */
+/* Cửa sổ đăng ký bán hàng */
 .hopxacthucrong { max-width: 520px; }
 .onhap textarea {
     width: 100%;

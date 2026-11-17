@@ -1,0 +1,149 @@
+/*
+ * loc.css: Danh mục và bộ lọc sản phẩm
+ * Gồm: thanh danh mục dưới đầu trang, trang danh sách (cột lọc, chip đang lọc, sắp xếp, phân trang).
+ * Nạp ở mọi trang của khách vì thanh danh mục hiện ở mọi trang.
+ */
+
+/*Thanh danh mục dưới đầu trang*/
+.thanhdanhmuc {
+    background: var(--mauthe);
+    border-bottom: 1px solid var(--mauvien);
+}
+.thanhdanhmuc .container {
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+}
+.thanhdanhmuc a {
+    padding: 12px 16px;
+    font-size: 14px;
+    color: var(--mauchumo);
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+}
+.thanhdanhmuc a:hover { color: var(--mauchu); }
+.thanhdanhmuc a.dangchon {
+    color: var(--mauxanh);
+    font-weight: 600;
+    border-bottom-color: var(--mauxanh);
+}
+
+/*Đầu trang danh sách: tiêu đề, số sản phẩm, sắp xếp*/
+.dausanpham {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 28px 0 16px;
+}
+.dausanpham h1 { font-size: 24px; font-weight: 700; margin: 0; }
+.dausanpham .soketqua { color: var(--mauchumo); font-size: 14px; }
+
+.chonsapxep { display: flex; align-items: center; gap: 8px; color: var(--mauchumo); font-size: 14px; margin: 0; }
+.chonsapxep select,
+.otruongloc {
+    background: var(--maunen);
+    border: 1px solid var(--mauvien);
+    color: var(--mauchu);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+.chonsapxep select:focus,
+.otruongloc:focus { outline: none; border-color: var(--mauxanh); }
+
+/*Chip: các điều kiện đang lọc, bấm để bỏ từng cái*/
+.dangloc { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 16px; }
+/* Danh mục dạng link, nhìn giống radio */
+.dongdanhmuc { color: var(--mauchu); }
+.dongdanhmuc:hover { color: var(--mauxanh); }
+.dongdanhmuc .chamchon {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid var(--mauchumo);
+    flex-shrink: 0;
+}
+.dongdanhmuc.dangchon .chamchon {
+    border-color: var(--maucam);
+    background: radial-gradient(circle, var(--maucam) 40%, transparent 45%);
+}
+.dongdanhmuc.dangchon { font-weight: 600; }
+.chiploc {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 10px 4px 12px;
+    background: rgba(34, 211, 238, .12);
+    color: var(--mauxanh);
+    border-radius: 16px;
+    font-size: 13px;
+}
+.chiploc:hover { background: rgba(34, 211, 238, .22); }
+.xoaloc { color: var(--mauchumo); font-size: 13px; text-decoration: underline; }
+.xoaloc:hover { color: var(--mauchu); }
+
+/*Cột lọc bên trái*/
+.cotloc {
+    background: var(--mauthe);
+    border: 1px solid var(--mauvien);
+    border-radius: 12px;
+    padding: 0 18px 18px;
+    margin: 0;
+}
+.nhomloc { padding: 16px 0; border-bottom: 1px solid var(--mauvien); }
+.nhomloc h3 { font-size: 14px; font-weight: 700; margin: 0 0 10px; }
+
+.dongloc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 0;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 0;
+}
+.dongloc span { display: flex; align-items: center; gap: 8px; }
+.dongloc small { color: var(--mauchumo); }
+.dongloc input { accent-color: var(--maucam); width: 16px; height: 16px; }
+
+.khoanggia { display: flex; align-items: center; gap: 8px; color: var(--mauchumo); }
+.khoanggia .otruongloc { min-width: 0; flex: 1; width: 100%; }
+.ghichuloc { display: block; color: var(--mauchumo); font-size: 12px; margin-top: 8px; }
+
+.nutloc { display: flex; gap: 8px; padding-top: 16px; }
+.nutloc .nutcam { flex: 1; text-align: center; padding: 9px; }
+.nutloc .nutvien { padding: 9px 16px; }
+
+/*Phân trang*/
+.phantrang { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; margin-top: 28px; }
+.phantrang a,
+.phantrang span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 38px;
+    height: 38px;
+    border: 1px solid var(--mauvien);
+    border-radius: 8px;
+    color: var(--mauchumo);
+}
+.phantrang a:hover { border-color: var(--mauxanh); color: var(--mauchu); }
+.phantrang .dangchon { background: var(--maucam); border-color: var(--maucam); color: #fff; font-weight: 700; }
+
+/*Phím Tab: viền rõ khi di chuyển bằng bàn phím*/
+.thanhdanhmuc a:focus-visible,
+.chiploc:focus-visible,
+.xoaloc:focus-visible,
+.phantrang a:focus-visible { outline: 2px solid var(--mauxanh); outline-offset: 2px; }
+
+/*Màn hình nhỏ: cột lọc ẩn đi, bấm nút "Bộ lọc" mới mở*/
+.nutmoloc { display: none; }
+
+@media (max-width: 991px) {
+    .nutmoloc { display: inline-block; padding: 8px 16px; }
+    .cotloc { display: none; }
+    .cotloc.mo { display: block; }
+}

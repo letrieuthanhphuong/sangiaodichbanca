@@ -17,7 +17,7 @@ class XacThucController extends Controller
             ->with('thongbao', ['loai' => $loai, 'tieude' => $tieude, 'noidung' => $noidung])
             ->with('mocuaso', $cuaso);
     }
-    // ================= ĐĂNG KÝ =================
+    //ĐĂNG KÝ 
     public function dangKy(Request $yeucau)
     {
         $taikhoan = trim($yeucau->input('taikhoan', ''));
@@ -25,11 +25,11 @@ class XacThucController extends Controller
         $nhaplai = $yeucau->input('nhaplaimatkhau', '');
         $email = null;
         $sdt = null;
-        // 1. Tài khoản trống
+        //Tài khoản trống
         if ($taikhoan === '') {
             return $this->baoLoi($yeucau, 'dangky', 'loi', 'Lỗi', 'Vui lòng nhập email hoặc số điện thoại!');
         }
-        // 2. Phân loại email hay số điện thoại
+        //Phân loại email hay số điện thoại
         if (filter_var($taikhoan, FILTER_VALIDATE_EMAIL)) {
             $email = $taikhoan;
         } elseif (preg_match('/^0[0-9]{9,10}$/', $taikhoan)) {
@@ -37,20 +37,20 @@ class XacThucController extends Controller
         } else {
             return $this->baoLoi($yeucau, 'dangky', 'loi', 'Lỗi', 'Vui lòng nhập email hoặc số điện thoại hợp lệ.');
         }
-        // 3. Mật khẩu trống
+        // Mật khẩu trống
         if ($matkhau === '') {
             return $this->baoLoi($yeucau, 'dangky', 'loi', 'Lỗi', 'Vui lòng nhập mật khẩu!');
         }
-        // 4. Độ mạnh: từ 6 ký tự, có 1 chữ hoa, có 1 ký tự đặc biệt
+        //Độ mạnh: từ 6 ký tự, có 1 chữ hoa, có 1 ký tự đặc biệt
         if (! preg_match('/^(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{6,}$/', $matkhau)) {
             return $this->baoLoi($yeucau, 'dangky', 'loi', 'Mật khẩu yếu!',
                 'Mật khẩu phải từ 6 ký tự, gồm ít nhất 1 chữ hoa và 1 ký tự đặc biệt!');
         }
-        // 5. Nhập lại mật khẩu
+        //Nhập lại mật khẩu
         if ($matkhau !== $nhaplai) {
             return $this->baoLoi($yeucau, 'dangky', 'loi', 'Lỗi', 'Mật khẩu nhập lại không khớp!');
         }
-        // 6. Trùng trong database
+        //Trùng trong database
         $datontai = $email
             ? NguoiDung::where('email', $email)->exists()
             : NguoiDung::where('sodienthoai', $sdt)->exists();
@@ -72,7 +72,7 @@ class XacThucController extends Controller
             ->with('thongbao', ['loai' => 'thanhcong', 'tieude' => 'Đăng ký thành công!', 'noidung' => 'Bạn có thể đăng nhập ngay.'])
             ->with('mocuaso', 'dangnhap');
     }
-    // ================= ĐĂNG NHẬP =================
+    // ĐĂNG NHẬP 
     public function dangNhap(Request $yeucau)
     {
         $taikhoan = trim($yeucau->input('taikhoan', ''));
@@ -102,7 +102,7 @@ class XacThucController extends Controller
                 'noidung' => 'Chào mừng quản trị viên ' . $nguoidung->hoten,
             ]);
         }
-        // Khách hàng (kể cả người bán)
+        // Khách hàng (kể cả nhà cung cấp)
         return redirect()->intended('/')->with('thongbao', [
             'loai' => 'thanhcong',
             'tieude' => 'Đăng nhập thành công!',
@@ -110,7 +110,7 @@ class XacThucController extends Controller
         ]);
     }
 
-    // ================= ĐĂNG XUẤT =================
+    //ĐĂNG XUẤT 
     public function dangXuat(Request $yeucau)
     {
         Auth::logout();

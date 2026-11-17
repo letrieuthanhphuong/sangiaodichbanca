@@ -27,26 +27,15 @@ class TrangChuController extends Controller
             ->take(8)
             ->get();
 
-        // Cá mới đăng: đã duyệt, đang bán, mới nhất trước
+        // Cá mới đăng: đã duyệt, đang bán, mới nhất trước, có phân trang
         $danhsachca = SanPham::hienThi()
             ->with(['hinhanh', 'nhacungcap'])
             ->orderByDesc('ngaytao')
             ->orderByDesc('id_sanpham')
-            ->take(30)
-            ->get()
-            ->groupBy('id_nhacungcap')
-            ->flatMap(fn ($nhom) => $nhom->take(2))
-            ->sortByDesc('id_sanpham')
-            ->take(6)
-            ->values();
+            ->paginate(6)
+            ->fragment('canhmoi')   // chuyển trang xong vẫn dừng ở mục cá mới đăng
+            ->withQueryString();
 
-        $camket = [
-            ['tieude' => 'Cá sống 100%', 'mota' => 'Đền bù nếu cá chết khi giao'],
-            ['tieude' => 'Đóng gói chuyên dụng', 'mota' => 'Túi oxy, thùng xốp giữ nhiệt'],
-            ['tieude' => 'Nhà cung cấp uy tín', 'mota' => 'Cửa hàng được quản trị viên xét duyệt'],
-            ['tieude' => 'Thanh toán an toàn', 'mota' => 'Giữ tiền đến khi bạn nhận cá'],
-        ];
-
-        return view('trangchu', compact('danhmuc', 'cuahang', 'danhsachca', 'camket'));
+        return view('trangchu', compact('danhmuc', 'cuahang', 'danhsachca'));
     }
 }

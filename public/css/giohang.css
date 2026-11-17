@@ -1,0 +1,105 @@
+/* giohang.css: trang giỏ hàng */
+.cuahanggio {
+    background: var(--mauthe);
+    border: 1px solid var(--mauvien);
+    border-radius: 12px;
+    margin-bottom: 16px;
+    padding: 0 18px;
+}
+.tencuahanggio { padding: 14px 0; font-weight: 700; border-bottom: 1px solid var(--mauvien); }
+.tencuahanggio i { color: var(--mauxanh); margin-right: 6px; }
+
+.donggio {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--mauvien);
+}
+.donggio:last-child { border-bottom: 0; }
+.anhgio { width: 72px; height: 72px; border-radius: 8px; overflow: hidden; background: var(--maunen); flex-shrink: 0; }
+.anhgio img { width: 100%; height: 100%; object-fit: cover; }
+.thongtingio { flex: 1; min-width: 0; }
+.tengio { font-weight: 600; }
+.giagio { color: var(--maucam); font-size: 14px; }
+.thanhtiengio { width: 130px; text-align: right; font-weight: 700; color: var(--maucam); }
+.nutxoagio { background: none; border: 0; color: var(--mauchumo); padding: 8px; cursor: pointer; }
+.nutxoagio:hover { color: #f87171; }
+
+/* Ô số lượng có nút − và + */
+.soluonggio { display: flex; align-items: center; margin: 0; }
+.soluonggio input {
+    width: 52px;
+    height: 34px;
+    text-align: center;
+    background: var(--maunen);
+    border: 1px solid var(--mauvien);
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    color: var(--mauchu);
+    font-size: 14px;
+    padding: 0;
+    -moz-appearance: textfield;
+}
+.soluonggio input::-webkit-outer-spin-button,
+.soluonggio input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.soluonggio input:focus { outline: none; }
+.nutsl {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    background: var(--maunen);
+    border: 1px solid var(--mauvien);
+    color: var(--mauchu);
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+}
+.nutsl:first-child { border-radius: 8px 0 0 8px; }
+.nutsl:last-child { border-radius: 0 8px 8px 0; }
+.nutsl:hover { border-color: var(--mauxanh); color: var(--mauxanh); }
+
+/* Thanh tổng */
+.tonggio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 24px;
+    padding: 16px 0;
+    font-size: 18px;
+}
+.tonggio strong { color: var(--maucam); }
+button.nutcam { border: 0; cursor: pointer; }
+
+/* Hộp hỏi xóa: ẩn sẵn, chỉ hiện khi có class "mo" */
+.nenhoixoa {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(0, 0, 0, .6);
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+.nenhoixoa.mo { display: flex; }
+.hopxoa {
+    background: var(--mauthe);
+    border: 1px solid var(--mauvien);
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 400px;
+    width: 100%;
+}
+.hopxoa h3 { font-size: 18px; font-weight: 700; margin: 0 0 8px; }
+.hopxoa p { color: var(--mauchumo); margin: 0 0 20px; }
+.hopxoa strong { color: var(--mauchu); }
+.nuthopxoa { display: flex; justify-content: flex-end; gap: 8px; }
+.nuthopxoa form { margin: 0; }
+
+@media (max-width: 575px) {
+    .donggio { flex-wrap: wrap; }
+    .thanhtiengio { width: auto; margin-left: auto; }
+}

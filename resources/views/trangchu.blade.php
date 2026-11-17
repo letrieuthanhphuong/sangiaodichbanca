@@ -35,7 +35,7 @@
     <div class="row g-3">
         @forelse ($cuahang as $ch)
             <div class="col-lg-3 col-md-4 col-6">
-                <div class="thecuahang">
+                <a href="{{ route('sanpham.danhsach', ['cuahang' => [$ch->id_nhacungcap]]) }}" class="thecuahang">
                     <div class="chucaidau">{{ mb_strtoupper(mb_substr($ch->tencuahang, 0, 1)) }}</div>
                     <div class="tencuahangthe">{{ $ch->tencuahang }}</div>
                     <div class="diachicuahang"><i class="fas fa-location-dot"></i> {{ $ch->diachi }}</div>
@@ -43,7 +43,7 @@
                         <p class="motacuahang">{{ Str::limit($ch->mota, 70) }}</p>
                     @endif
                     <div class="soluongcuahang">{{ $ch->soluong }} sản phẩm</div>
-                </div>
+                </a>
             </div>
         @empty
             <p class="text-secondary">Chưa có cửa hàng nào.</p>
@@ -69,7 +69,14 @@
                         <div class="tenca">{{ $ca->tensanpham }}</div>
                         <div class="tencuahang">{{ $ca->nhacungcap->tencuahang }}</div>
                         <div class="giaca">{{ number_format($ca->gia, 0, ',', '.') }}đ</div>
-                        <a href="#" class="nutcam">Thêm vào giỏ</a>
+                        @auth
+                            <form action="{{ route('giohang.them', $ca->id_sanpham) }}" method="POST">
+                                @csrf
+                                <button type="submit" class="nutcam w-100">Thêm vào giỏ</button>
+                            </form>
+                        @else
+                            <a href="#" class="nutcam" onclick="moCuaSo('dangnhap'); return false;">Thêm vào giỏ</a>
+                        @endauth
                     </div>
                 </div>
             </div>
@@ -77,4 +84,23 @@
             <p class="text-secondary">Chưa có sản phẩm nào.</p>
         @endforelse
     </div>
+        @if ($danhsachca->lastPage() > 1)
+        <nav class="phantrang" aria-label="Phân trang">
+            @if (! $danhsachca->onFirstPage())
+                <a href="{{ $danhsachca->previousPageUrl() }}" aria-label="Trang trước">&laquo;</a>
+            @endif
+
+            @for ($i = 1; $i <= $danhsachca->lastPage(); $i++)
+                @if ($i === $danhsachca->currentPage())
+                    <span class="dangchon" aria-current="page">{{ $i }}</span>
+                @else
+                    <a href="{{ $danhsachca->url($i) }}">{{ $i }}</a>
+                @endif
+            @endfor
+
+            @if ($danhsachca->hasMorePages())
+                <a href="{{ $danhsachca->nextPageUrl() }}" aria-label="Trang sau">&raquo;</a>
+            @endif
+        </nav>
+    @endif
 @endsection

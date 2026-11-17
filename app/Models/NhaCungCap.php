@@ -9,7 +9,7 @@ class NhaCungCap extends Model
     protected $table = 'nhacungcap';
     protected $primaryKey = 'id_nhacungcap';
     const CREATED_AT = 'ngaytao';
-    const UPDATED_AT = null;// bảng nhacungcap không có cột ngày cập nhật
+    const UPDATED_AT = null;
     protected $fillable = [
         'id_nguoidung', 'tencuahang', 'mota', 'diachi', 'sodienthoai', 'masothue',
         'trangthaiduyet', 'lydotuchoi', 'id_quantri', 'ngayduyet',

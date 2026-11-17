@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="{{ asset('css/theca.css') }}">
     <link rel="stylesheet" href="{{ asset('css/cuaso.css') }}">
     <link rel="stylesheet" href="{{ asset('css/timkiem.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/loc.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/giohang.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -59,14 +61,21 @@
     <header class="dautrang">
         <div class="container d-flex align-items-center gap-4">
             <a href="/" class="thuonghieu">Aqua<span>Market</span></a>
-            <form action="{{ route('timkiem') }}" method="GET" class="formtimkiem">
-                <input type="text" name="tukhoa" class="otimkiem" value="{{ request('tukhoa') }}"
-                    placeholder="Tìm cá Koi, Rồng, Betta..." autocomplete="off">
+            <form action="{{ route('sanpham.danhsach') }}" method="GET" class="formtimkiem">
+                <input type="text" name="tukhoa" class="otimkiem"
+                    value="{{ request('tukhoa') }}"
+                    placeholder="Tìm cá Koi, Rồng, Betta..."
+                    autocomplete="off">
+
                 <button type="submit" class="nutcam">Tìm</button>
             </form>
-            <a href="#" class="nutcam text-nowrap">Giỏ hàng (0)</a>
+            @php
+                $sodonggio = Auth::check() ? \App\Models\GioHang::where('id_nguoidung', Auth::id())->count() : 0;
+            @endphp
+            <a href="{{ route('giohang.xem') }}" class="nutcam text-nowrap">Giỏ hàng ({{ $sodonggio }})</a>
         </div>
     </header>
+    
 
     {{-- Nội dung riêng của từng trang --}}
     <main class="container pb-5">

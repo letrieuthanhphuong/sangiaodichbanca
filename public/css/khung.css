@@ -3,7 +3,7 @@
  * Gồm: thanh trên cùng, đầu trang (kèm ô tìm kiếm) và chân trang.
  */
 
-/* ===== Thanh trên cùng ===== */
+/* Thanh trên cùng */
 .thanhtren {
     background: #070d1a;
     font-size: 12px;
@@ -11,7 +11,7 @@
     padding: 6px 0;
 }
 
-/* ===== Đầu trang ===== */
+/* Đầu trang */
 .dautrang {
     background: var(--mauthe);
     border-bottom: 1px solid var(--mauvien);
@@ -30,7 +30,7 @@
 }
 .otimkiem:focus { outline: none; border-color: var(--mauxanh); }
 
-/* ===== Chân trang ===== */
+/* Chân trang */
 .chantrang {
     background: #070d1a;
     border-top: 1px solid var(--mauvien);

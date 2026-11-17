@@ -41,28 +41,6 @@
 .odanhmuc .chu { padding: 12px 14px; }
 .odanhmuc .chu small { color: var(--mauchumo); }
 
-/* ===== Khối cam kết ===== */
-.khoicamket {
-    background: var(--mauthe);
-    border: 1px solid var(--mauvien);
-    border-radius: 12px;
-    padding: 20px;
-    height: 100%;
-}
-.khoicamket .bieutuong {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    background: rgba(34, 211, 238, .12);
-    color: var(--mauxanh);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    margin-bottom: 12px;
-}
-.khoicamket p { color: var(--mauchumo); font-size: 14px; margin: 6px 0 0; }
-
 /* ===== Thẻ cửa hàng ở trang chủ ===== */
 .thecuahang {
     background: var(--mauthe);
@@ -91,3 +69,16 @@
 .diachicuahang { color: var(--mauchumo); font-size: 13px; margin-bottom: 8px; }
 .motacuahang { color: var(--mauchumo); font-size: 13px; margin: 0 0 10px; }
 .soluongcuahang { color: var(--maucam); font-size: 13px; font-weight: 600; }
+
+/*Thẻ cửa hàng là link: bỏ gạch chân, có hiệu ứng khi rê chuột*/
+a.thecuahang {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    transition: border-color .15s, transform .15s;
+}
+a.thecuahang:hover {
+    border-color: var(--mauxanh);
+    transform: translateY(-2px);
+}
+a.thecuahang:focus-visible { outline: 2px solid var(--mauxanh); outline-offset: 2px; }

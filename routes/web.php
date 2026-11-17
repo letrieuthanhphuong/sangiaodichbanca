@@ -9,7 +9,8 @@ use App\Http\Controllers\nhacungcap\BangDieuKhienController;
 use App\Http\Controllers\NhaCungCap\SanPhamController;
 use App\Http\Controllers\QuanTri\DuyetSanPhamController;
 use App\Http\Controllers\TrangChuController;
-use App\Http\Controllers\TimKiemController;
+use App\Http\Controllers\DanhSachSanPhamController;
+use App\Http\Controllers\GioHangController;
 
 Route::get('/', function () {
     return view('trangchu');
@@ -33,7 +34,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/dangkynguoiban', [DangKyNhaCungCapController::class, 'guiDon'])->name('nhacungcap.guidon');
 });
 
-Route::get('/timkiem', [TimKiemController::class, 'hienKetQua'])->name('timkiem');
+Route::get('/sanpham', [DanhSachSanPhamController::class, 'hienDanhSach'])->name('sanpham.danhsach');
 
 // Khu vực quản trị viên
 Route::middleware(['auth', 'vaitro:quantri'])->prefix('quantri')->group(function () {
@@ -62,3 +63,12 @@ Route::middleware(['auth', 'nhacungcap'])->prefix('nhacungcap')->group(function 
     Route::delete('/sanpham/{id}', [SanPhamController::class, 'xoa'])->name('nhacungcap.sanpham.xoa');
 });
 
+Route::middleware('auth')->prefix('gio-hang')->name('giohang.')->group(function () {
+    Route::get('/', [GioHangController::class, 'xem'])->name('xem');
+    Route::post('/them/{id}', [GioHangController::class, 'them'])->name('them');
+    Route::patch('/{id}', [GioHangController::class, 'capNhat'])->name('capnhat');
+    Route::delete('/{id}', [GioHangController::class, 'xoa'])->name('xoa');
+});
+
+// Chưa đăng nhập mà vào giỏ thì về trang chủ và mở popup đăng nhập
+Route::get('/dangnhap', fn () => redirect('/')->with('mocuaso', 'dangnhap'))->name('login');

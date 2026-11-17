@@ -1,6 +1,6 @@
 .khungbangdieukhien { display: flex; min-height: 100vh; }
 
-/* ===== Thanh menu bên trái ===== */
+/*Thanh menu bên trái*/
 .thanhben {
     width: 240px;
     background: var(--mauthe);
@@ -29,13 +29,13 @@
     gap: 8px;
 }
 
-/* ===== Vùng nội dung ===== */
+/*Vùng nội dung*/
 .noidungchinh { flex: 1; padding: 28px 32px; min-width: 0; }
 .dautrangbang { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
 .dautrangbang h1 { font-size: 24px; font-weight: 700; margin: 0; }
 .dautrangbang span { color: var(--mauchumo); font-size: 14px; }
 
-/* ===== Thẻ thống kê ===== */
+/*Thẻ thống kê*/
 .thethongke {
     background: var(--mauthe);
     border: 1px solid var(--mauvien);
@@ -47,7 +47,7 @@
 .thethongke.noibat { border-color: var(--maucam); }
 .thethongke.noibat strong { color: var(--maucam); }
 
-/* ===== Bảng và bộ lọc ===== */
+/*Bảng và bộ lọc*/
 .thanhloc { margin: 0 0 20px; }
 .thanhloc a {
     display: inline-block;
@@ -92,7 +92,7 @@
     .thanhben { width: 100%; height: auto; position: static; }
 }
 
-/* ===== Quản lý sản phẩm của nhà cung cấp ===== */
+/*Quản lý sản phẩm của nhà cung cấp*/
 .anhnho {
     width: 64px;
     height: 48px;

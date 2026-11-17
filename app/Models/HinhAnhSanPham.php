@@ -8,7 +8,7 @@ class HinhAnhSanPham extends Model
 {
     protected $table = 'hinhanhsanpham';
     protected $primaryKey = 'id_hinhanhsanpham';
-    public $timestamps = false;   // bảng hinhanhsanpham không có cột thời gian
+    public $timestamps = false;
 
     protected $fillable = ['id_sanpham', 'duongdan', 'thutu'];
 }

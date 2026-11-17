@@ -10,7 +10,7 @@ class DanhMuc extends Model
     protected $primaryKey = 'id_danhmuc';
 
     const CREATED_AT = 'ngaytao';
-    const UPDATED_AT = null;   // bảng danhmuc không có cột ngày cập nhật
+    const UPDATED_AT = null; 
 
     protected $fillable = ['tendanhmuc', 'mota', 'trangthai'];
 
