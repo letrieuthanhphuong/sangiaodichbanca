@@ -94,11 +94,6 @@
     </div>
 
     <div class="nhomtruong">
-        <label>Mô tả</label>
-        <textarea name="mota" rows="4" class="otruong">{{ old('mota', $sanpham->mota ?? '') }}</textarea>
-    </div>
-
-    <div class="nhomtruong">
         <label>Hình ảnh (tối đa 5 ảnh, mỗi ảnh dưới 2 MB){{ $sanpham ? '' : ' *' }}</label>
         <input type="file" name="hinhanh[]" class="otruong" multiple
                accept="image/jpeg,image/png,image/webp">

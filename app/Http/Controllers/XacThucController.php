@@ -59,7 +59,7 @@ class XacThucController extends Controller
             return $this->baoLoi($yeucau, 'dangky', 'loi', 'Đăng ký thất bại!', 'Email hoặc số điện thoại đã được đăng ký.');
         }
         NguoiDung::create([
-            'hoten' => $email ? explode('@', $email)[0] : $sdt,   // tạm lấy phần trước @, sau này cho sửa trong hồ sơ
+            'hoten' => $email ? explode('@', $email)[0]: 'Khách hàng ' . substr($sdt, -4),
             'email' => $email,
             'sodienthoai' => $sdt,
             'matkhau' => Hash::make($matkhau),

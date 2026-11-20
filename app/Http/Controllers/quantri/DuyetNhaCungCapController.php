@@ -17,12 +17,18 @@ class DuyetNhaCungCapController extends Controller
             $trangthai = 'choduyet';
         }
 
+        $soluong = [
+            'choduyet' => NhaCungCap::where('trangthaiduyet', 'choduyet')->count(),
+            'daduyet'  => NhaCungCap::where('trangthaiduyet', 'daduyet')->count(),
+            'tuchoi'   => NhaCungCap::where('trangthaiduyet', 'tuchoi')->count(),
+        ];
+
         $danhsach = NhaCungCap::with('nguoidung')
             ->where('trangthaiduyet', $trangthai)
             ->orderByDesc('ngaytao')
             ->get();
 
-        return view('quantri.nhacungcap', compact('danhsach', 'trangthai'));
+        return view('quantri.nhacungcap', compact('danhsach', 'trangthai','soluong'));
     }
 
     public function duyet(Request $yeucau, NhaCungCap $nhacungcap)

@@ -17,13 +17,19 @@ class DuyetSanPhamController extends Controller
             $trangthai = 'choduyet';
         }
 
+        $soluong = [
+            'choduyet' => SanPham::where('trangthaiduyet', 'choduyet')->count(),
+            'daduyet'  => SanPham::where('trangthaiduyet', 'daduyet')->count(),
+            'tuchoi'   => SanPham::where('trangthaiduyet', 'tuchoi')->count(),
+        ];
+
         $danhsach = SanPham::with(['nhacungcap', 'danhmuc', 'loaica', 'hinhanh'])
             ->where('trangthaiduyet', $trangthai)
             ->orderByDesc('ngaycapnhat')
             ->orderByDesc('id_sanpham')
             ->get();
 
-        return view('quantri.sanpham', compact('danhsach', 'trangthai'));
+        return view('quantri.sanpham', compact('danhsach', 'trangthai','soluong'));
     }
 
     public function duyet(SanPham $sanpham)
