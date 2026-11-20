@@ -1,0 +1,129 @@
+/*
+ * chitiet.css: Trang chi tiết sản phẩm
+ * Gồm: đường dẫn, ảnh lớn và ảnh nhỏ, thông tin và nút mua, bảng thông tin chăm sóc.
+ */
+
+/* ===== Đường dẫn (Trang chủ > Danh mục > Sản phẩm) ===== */
+.duongdan {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--mauchumo);
+    margin: 20px 0 16px;
+}
+.duongdan a:hover { color: var(--mauxanh); }
+.duongdan i { font-size: 10px; }
+.duongdan span { color: var(--mauchu); }
+
+/* ===== Ảnh sản phẩm ===== */
+.khunganhchinh {
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #16294d, #0f1f3d);
+    border: 1px solid var(--mauvien);
+    border-radius: 12px;
+    overflow: hidden;
+}
+.khunganhchinh img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+.chuacoanh { display: flex; flex-direction: column; align-items: center; gap: 8px; color: var(--mauchumo); }
+.chuacoanh i { font-size: 48px; color: var(--mauxanh); }
+
+.dayanhnho { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.anhnhochon {
+    width: 80px;
+    height: 60px;
+    padding: 0;
+    background: var(--mauthe);
+    border: 2px solid var(--mauvien);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.anhnhochon img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.anhnhochon:hover { border-color: var(--mauchumo); }
+.anhnhochon.dangchon { border-color: var(--maucam); }
+.anhnhochon:focus-visible { outline: 2px solid var(--mauxanh); outline-offset: 2px; }
+
+/* ===== Thông tin và nút mua ===== */
+.tencuahanglink { color: var(--mauxanh); font-size: 14px; }
+.tencuahanglink:hover { text-decoration: underline; }
+
+.thongtinsp h1 { font-size: 28px; font-weight: 700; line-height: 1.25; margin: 6px 0 12px; }
+.giachitiet { color: var(--maucam); font-size: 32px; font-weight: 800; margin-bottom: 16px; }
+
+.thongsonhanh { list-style: none; padding: 0; margin: 0 0 20px; border-top: 1px solid var(--mauvien); }
+.thongsonhanh li {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--mauvien);
+    font-size: 14px;
+}
+.thongsonhanh span { color: var(--mauchumo); }
+.thongsonhanh .conhang { color: #2ecc71; }
+.thongsonhanh .hethang { color: #ff6b6b; }
+
+.formmua { display: flex; align-items: flex-end; flex-wrap: wrap; gap: 12px; margin: 0; }
+.chonsoluong { display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: var(--mauchumo); margin: 0; }
+.chonsoluong input {
+    width: 96px;
+    background: var(--maunen);
+    border: 1px solid var(--mauvien);
+    color: var(--mauchu);
+    border-radius: 8px;
+    padding: 10px 12px;
+}
+.chonsoluong input:focus { outline: none; border-color: var(--mauxanh); }
+
+.nutmua { padding: 12px 28px; }
+.nutmua:disabled { background: var(--mauvien); color: var(--mauchumo); cursor: not-allowed; }
+
+.ghichumua {
+    background: rgba(34, 211, 238, .1);
+    border: 1px solid var(--mauxanh);
+    color: var(--mauxanh);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+}
+
+.mota { margin-top: 24px; }
+.mota h2 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.mota p { color: var(--mauchumo); line-height: 1.65; margin: 0; }
+
+/* ===== Thông tin chăm sóc ===== */
+.khungchamsoc {
+    background: var(--mauthe);
+    border: 1px solid var(--mauvien);
+    border-radius: 12px;
+    padding: 4px 20px;
+}
+.bangchamsoc { width: 100%; border-collapse: collapse; }
+.bangchamsoc th,
+.bangchamsoc td {
+    padding: 12px 8px;
+    border-bottom: 1px solid var(--mauvien);
+    font-size: 14px;
+    text-align: left;
+    vertical-align: top;
+}
+.bangchamsoc tr:last-child th,
+.bangchamsoc tr:last-child td { border-bottom: none; }
+.bangchamsoc th { width: 220px; color: var(--mauchumo); font-weight: 600; }
+
+.nhandokho { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+.nhandokho.de { background: rgba(46, 204, 113, .15); color: #2ecc71; }
+.nhandokho.trungbinh { background: rgba(255, 122, 26, .15); color: var(--maucam); }
+.nhandokho.kho { background: rgba(255, 107, 107, .15); color: #ff6b6b; }
+
+@media (max-width: 576px) {
+    .thongtinsp h1 { font-size: 22px; }
+    .giachitiet { font-size: 26px; }
+    .bangchamsoc th { width: 120px; }
+}

@@ -1,0 +1,206 @@
+/*
+ * duyet.css: Giao diện duyệt (admin) và hộp hỏi xác nhận (dùng ở cả hai bảng điều khiển)
+ * Gồm: hộp hỏi xác nhận, hộp nhập lý do từ chối, thanh tab, thẻ duyệt.
+ */
+
+/* ===== Hộp hỏi xác nhận và hộp nhập lý do ===== */
+.nenhop {
+    position: fixed;
+    inset: 0;
+    z-index: 1500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: rgba(3, 8, 18, .75);
+}
+.nenhop[hidden] { display: none; }
+
+.hophoi {
+    width: 100%;
+    max-width: 420px;
+    margin: 0;
+    padding: 24px;
+    background: var(--mauthe);
+    border: 1px solid var(--mauvien);
+    border-radius: 14px;
+}
+.hophoirong { max-width: 520px; }
+.hophoi h3 { font-size: 18px; font-weight: 700; margin: 0 0 8px; }
+.hophoi p { color: var(--mauchumo); font-size: 14px; margin: 0 0 18px; }
+.hophoi p.tenmuctuchoi { color: var(--mauchu); font-weight: 600; margin-bottom: 14px; }
+.hophoi label { display: block; font-size: 13px; color: var(--mauchumo); margin-bottom: 6px; }
+
+.otruonglydo {
+    width: 100%;
+    background: var(--maunen);
+    border: 1px solid var(--mauvien);
+    color: var(--mauchu);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 14px;
+    resize: vertical;
+}
+.otruonglydo:focus { outline: none; border-color: var(--mauxanh); }
+
+.lydomau { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.chiplydo {
+    background: rgba(34, 211, 238, .1);
+    color: var(--mauxanh);
+    border: 1px solid transparent;
+    border-radius: 16px;
+    padding: 4px 12px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.chiplydo:hover { border-color: var(--mauxanh); }
+
+.nuthop { display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; }
+.nutnguyhiem {
+    background: #ff6b6b;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-weight: 600;
+}
+.nutnguyhiem:hover { background: #ff8585; }
+.hophoi button:focus-visible,
+.nutduyet:focus-visible,
+.nuttuchoi:focus-visible { outline: 2px solid var(--mauxanh); outline-offset: 2px; }
+
+/* ===== Thanh tab có số đếm ===== */
+.thanhtab {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--mauvien);
+}
+.thanhtab a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    margin-bottom: -1px;
+    font-size: 14px;
+    color: var(--mauchumo);
+    border-bottom: 2px solid transparent;
+}
+.thanhtab a:hover { color: var(--mauchu); }
+.thanhtab a.dangchon { color: var(--mauxanh); font-weight: 600; border-bottom-color: var(--mauxanh); }
+.sotab { background: var(--mauvien); color: var(--mauchu); border-radius: 10px; padding: 0 8px; font-size: 12px; }
+.thanhtab a.dangchon .sotab { background: var(--mauxanh); color: #06222a; }
+
+/* ===== Thẻ duyệt ===== */
+.danhsachduyet { display: flex; flex-direction: column; gap: 14px; }
+
+.theduyet {
+    display: grid;
+    grid-template-columns: 170px 1fr auto;
+    gap: 18px;
+    padding: 14px;
+    background: var(--mauthe);
+    border: 1px solid var(--mauvien);
+    border-radius: 12px;
+}
+.theduyetcuahang { grid-template-columns: 56px 1fr auto; }
+
+.anhduyet {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 4 / 3;
+    background: linear-gradient(135deg, #16294d, #0f1f3d);
+    border-radius: 8px;
+    overflow: hidden;
+    color: var(--mauchumo);
+    font-size: 32px;
+}
+.anhduyet img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.soanh {
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+    padding: 2px 8px;
+    background: rgba(3, 8, 18, .75);
+    color: var(--mauchu);
+    border-radius: 10px;
+    font-size: 11px;
+}
+
+.chucaiduyet {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(34, 211, 238, .14);
+    color: var(--mauxanh);
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.thongtinduyet { min-width: 0; }
+.thongtinduyet h3 { font-size: 17px; font-weight: 700; margin: 2px 0 4px; }
+.dongphu { color: var(--mauchumo); font-size: 13px; }
+.giaduyet { color: var(--maucam); font-size: 18px; font-weight: 700; margin: 4px 0 8px; }
+.giaduyet small { color: var(--mauchumo); font-size: 13px; font-weight: 400; }
+
+.nhomnhan { display: flex; flex-wrap: wrap; gap: 6px; }
+.nhanphu {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 10px;
+    background: rgba(138, 160, 196, .12);
+    color: var(--mauchu);
+    border-radius: 12px;
+    font-size: 12px;
+}
+.nhanphu.canhbaonhan { background: rgba(255, 122, 26, .15); color: var(--maucam); }
+
+.motaduyet {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 8px 0 0;
+    color: var(--mauchumo);
+    font-size: 13.5px;
+}
+.lydoduyet { margin: 8px 0 0; color: #ff9b9b; font-size: 13.5px; }
+
+.hanhdongduyet { display: flex; flex-direction: column; justify-content: center; gap: 8px; min-width: 130px; }
+.hanhdongduyet form { margin: 0; }
+.nutduyet,
+.nuttuchoi {
+    width: 100%;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.nutduyet { background: #2ecc71; color: #06210f; border: none; }
+.nutduyet:hover { background: #4ad98a; }
+.nuttuchoi { background: transparent; color: #ff6b6b; border: 1px solid #ff6b6b; }
+.nuttuchoi:hover { background: rgba(255, 107, 107, .12); }
+
+.trongduyet {
+    padding: 56px 16px;
+    text-align: center;
+    background: var(--mauthe);
+    border: 1px solid var(--mauvien);
+    border-radius: 12px;
+    color: var(--mauchumo);
+}
+.trongduyet i { display: block; margin-bottom: 12px; font-size: 40px; color: #2ecc71; }
+.trongduyet p { margin: 0; font-size: 16px; color: var(--mauchu); }
+
+@media (max-width: 768px) {
+    .theduyet { grid-template-columns: 110px 1fr; }
+    .theduyetcuahang { grid-template-columns: 48px 1fr; }
+    .hanhdongduyet { grid-column: 1 / -1; flex-direction: row; }
+}

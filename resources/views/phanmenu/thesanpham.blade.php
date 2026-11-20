@@ -6,9 +6,11 @@
 
 <div class="theca">
     <div class="anhca">
-        @if ($coanh)
-            <img src="{{ asset($duongdananh) }}" alt="{{ $ca->tensanpham }}">
-        @endif
+       <a href="{{ route('sanpham.chitiet', $ca->id_sanpham) }}" class="anhca d-block">
+            @if ($coanh)
+                <img src="{{ asset($duongdananh) }}" alt="{{ $ca->tensanpham }}">
+            @endif
+        </a>
     </div>
     <div class="noidungthe">
         {{-- Trang chi tiết sản phẩm chưa làm nên tạm để # --}}

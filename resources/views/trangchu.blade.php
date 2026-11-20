@@ -61,9 +61,11 @@
             <div class="col-lg-4 col-md-6">
                 <div class="theca">
                     <div class="anhca">
-                        @if ($coanh)
-                            <img src="{{ asset($duongdananh) }}" alt="{{ $ca->tensanpham }}">
-                        @endif
+                       <a href="{{ route('sanpham.chitiet', $ca->id_sanpham) }}" class="anhca d-block">
+                            @if ($coanh)
+                                <img src="{{ asset($duongdananh) }}" alt="{{ $ca->tensanpham }}">
+                            @endif
+                        </a>
                     </div>
                     <div class="noidungthe">
                         <div class="tenca">{{ $ca->tensanpham }}</div>

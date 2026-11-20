@@ -11,6 +11,7 @@ use App\Http\Controllers\QuanTri\DuyetSanPhamController;
 use App\Http\Controllers\TrangChuController;
 use App\Http\Controllers\DanhSachSanPhamController;
 use App\Http\Controllers\GioHangController;
+use App\Http\Controllers\ChiTietSanPhamController;
 
 Route::get('/', function () {
     return view('trangchu');
@@ -35,7 +36,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/sanpham', [DanhSachSanPhamController::class, 'hienDanhSach'])->name('sanpham.danhsach');
-
+Route::get('/sanpham/{id}', [ChiTietSanPhamController::class, 'hienChiTiet'])->whereNumber('id')->name('sanpham.chitiet');
 // Khu vực quản trị viên
 Route::middleware(['auth', 'vaitro:quantri'])->prefix('quantri')->group(function () {
     Route::get('/', [TongQuanController::class, 'tongQuan'])->name('quantri.tongquan');
