@@ -1,9 +1,3 @@
-/*
- * chitiet.css: Trang chi tiết sản phẩm
- * Gồm: đường dẫn, ảnh lớn và ảnh nhỏ, thông tin và nút mua, bảng thông tin chăm sóc.
- */
-
-/* ===== Đường dẫn (Trang chủ > Danh mục > Sản phẩm) ===== */
 .duongdan {
     display: flex;
     align-items: center;
@@ -17,7 +11,7 @@
 .duongdan i { font-size: 10px; }
 .duongdan span { color: var(--mauchu); }
 
-/* ===== Ảnh sản phẩm ===== */
+/* Ảnh sản phẩm */
 .khunganhchinh {
     aspect-ratio: 4 / 3;
     display: flex;
@@ -49,7 +43,7 @@
 .anhnhochon.dangchon { border-color: var(--maucam); }
 .anhnhochon:focus-visible { outline: 2px solid var(--mauxanh); outline-offset: 2px; }
 
-/* ===== Thông tin và nút mua ===== */
+/* Thông tin và nút mua */
 .tencuahanglink { color: var(--mauxanh); font-size: 14px; }
 .tencuahanglink:hover { text-decoration: underline; }
 
@@ -97,7 +91,7 @@
 .mota h2 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
 .mota p { color: var(--mauchumo); line-height: 1.65; margin: 0; }
 
-/* ===== Thông tin chăm sóc ===== */
+/* Thông tin chăm sóc */
 .khungchamsoc {
     background: var(--mauthe);
     border: 1px solid var(--mauvien);

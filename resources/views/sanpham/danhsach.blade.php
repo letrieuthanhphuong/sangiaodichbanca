@@ -39,7 +39,7 @@
 @endif
 
 <div class="row g-4">
-    {{-- ===== Cột lọc ===== --}}
+    {{-- Cột lọc --}}
     <aside class="col-lg-3">
         <form method="GET" action="{{ route('sanpham.danhsach') }}" id="formloc" class="cotloc">
             @if ($tukhoa !== '')
@@ -111,7 +111,7 @@
         </form>
     </aside>
 
-    {{-- ===== Danh sách sản phẩm ===== --}}
+    {{-- Danh sách sản phẩm --}}
     <div class="col-lg-9">
         <div class="row g-4">
             @forelse ($phantrang as $ca)

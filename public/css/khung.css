@@ -1,9 +1,3 @@
-/*
- * khung.css: Khung trang dành cho khách
- * Gồm: thanh trên cùng, đầu trang (kèm ô tìm kiếm) và chân trang.
- */
-
-/* Thanh trên cùng */
 .thanhtren {
     background: #070d1a;
     font-size: 12px;

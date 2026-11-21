@@ -1,9 +1,3 @@
-/*
- * cuaso.css: Cửa sổ nổi
- * Gồm: đăng nhập, đăng ký, đăng ký nhà cung cấp.
- */
-
-/* Cửa sổ đăng nhập, đăng ký */
 .nencuaso {
     position: fixed;
     inset: 0;

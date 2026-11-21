@@ -1,9 +1,3 @@
-/*
- * trangchu.css: Riêng trang chủ
- * Gồm: banner, ô danh mục, khối cam kết, thẻ cửa hàng.
- */
-
-/* ===== Banner trang chủ ===== */
 .bannertrangchu {
     background: linear-gradient(135deg, #0f1f3d 0%, var(--maunen) 70%);
     border: 1px solid var(--mauvien);
@@ -25,7 +19,7 @@
     margin-bottom: 14px;
 }
 
-/* ===== Ô danh mục ===== */
+/* Ô danh mục */
 .odanhmuc {
     background: var(--mauthe);
     border: 1px solid var(--mauvien);
@@ -41,7 +35,7 @@
 .odanhmuc .chu { padding: 12px 14px; }
 .odanhmuc .chu small { color: var(--mauchumo); }
 
-/* ===== Thẻ cửa hàng ở trang chủ ===== */
+/* Thẻ cửa hàng ở trang chủ */
 .thecuahang {
     background: var(--mauthe);
     border: 1px solid var(--mauvien);

@@ -1,8 +1,3 @@
-{{--
-    Hộp nhập lý do từ chối, dùng chung cho trang duyệt sản phẩm và duyệt nhà cung cấp.
-    Dùng: @include('phanmenu.hoptuchoi', ['lydomau' => ['Lý do gợi ý 1', 'Lý do gợi ý 2']])
-    Nút "Từ chối" của từng dòng cần có: type="button" data-url="địa chỉ từ chối" data-ten="tên hiển thị" onclick="moTuChoi(this)"
---}}
 <div class="nenhop" id="hoptuchoi" hidden>
     <form method="POST" id="formtuchoi" class="hophoi hophoirong" role="dialog" aria-modal="true" aria-labelledby="tuchoitieude">
         @csrf

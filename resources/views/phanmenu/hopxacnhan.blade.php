@@ -1,11 +1,3 @@
-{{--
-    Hộp hỏi xác nhận dùng chung, thay cho hộp confirm() mặc định của trình duyệt.
-    Cách dùng: thêm các thuộc tính này vào thẻ <form>, bấm gửi form thì hộp tự hiện ra:
-        data-xacnhan-tieude="Duyệt sản phẩm này?"
-        data-xacnhan-noidung="Nội dung giải thích"        (không bắt buộc)
-        data-xacnhan-nut="Duyệt"                          (chữ trên nút đồng ý, không bắt buộc)
-        data-xacnhan-kieu="nguyhiem"                      (nút đỏ, dùng cho thao tác xóa, không bắt buộc)
---}}
 <div class="nenhop" id="hopxacnhan" hidden>
     <div class="hophoi" role="dialog" aria-modal="true" aria-labelledby="xacnhantieude" aria-describedby="xacnhannoidung">
         <h3 id="xacnhantieude"></h3>

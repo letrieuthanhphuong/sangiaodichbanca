@@ -25,7 +25,7 @@
 </nav>
 
 <div class="row g-4">
-    {{-- ===== Ảnh sản phẩm ===== --}}
+    {{-- Ảnh sản phẩm --}}
     <div class="col-lg-6">
         <div class="khunganhchinh">
             @if ($anh->count())
@@ -52,7 +52,7 @@
         @endif
     </div>
 
-    {{-- ===== Thông tin và nút mua ===== --}}
+    {{-- Thông tin và nút mua --}}
     <div class="col-lg-6">
         <div class="thongtinsp">
             <a href="{{ route('sanpham.danhsach', ['cuahang' => [$sanpham->id_nhacungcap]]) }}" class="tencuahanglink">
@@ -120,7 +120,7 @@
     </div>
 </div>
 
-{{-- ===== Thông tin chăm sóc (chỉ có với cá, phụ kiện không có loại cá) ===== --}}
+{{-- Thông tin chăm sóc--}}
 @if ($loaica)
     <h2 class="tieudemuc">Thông tin chăm sóc</h2>
     <div class="khungchamsoc">
@@ -154,7 +154,7 @@
     </div>
 @endif
 
-{{-- ===== Sản phẩm cùng danh mục ===== --}}
+{{-- Sản phẩm cùng danh mục --}}
 @if ($lienquan->count())
     <h2 class="tieudemuc">Sản phẩm cùng danh mục</h2>
     <div class="row g-4">
